@@ -10,10 +10,29 @@
 class GroceryListItem extends React.Component {
   constructor(props) {
     super(props);
+
+    // `state` is just an object literal
+    this.state = {
+      done: false
+    };
   }
+
+  // When a list item is clicked, we will toggle the `done`
+  // boolean, and our component's `render` method will run again
+  onListItemHover() {
+    this.setState({
+      done: !this.state.done
+    });
+  }
+
   render() {
+
+    var style = {
+      fontWeight: this.state.done ? 'bold' : 'none'
+    };
+
     return (
-    <li>{this.props.items}</li>
+    <li style={style} onMouseEnter={this.onListItemHover.bind(this)} >{this.props.items}</li>
     );
   }
 
