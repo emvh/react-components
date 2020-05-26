@@ -1,20 +1,33 @@
 // TODO
-var Cheese = () => (
-  <div>Cheese</div>
-);
+// var Cheese = () => (
+//   <div>Cheese</div>
+// );
 
-var ChickenNuggets = () => (
-  <div>Chicken Nuggets</div>
-);
+// var ChickenNuggets = () => (
+//   <div>Chicken Nuggets</div>
+// );
 
-var GroceryList = () => (
+var GroceryListItem = (props) => {
+  return (
+    <li>{props.item}</li>
+    );
+  }
+
+var GroceryList = (props) => {
+  return (
   <div>
     <h3> My Grocery List</h3>
-      <Cheese />
-      <ChickenNuggets />
+    <ul>
+        <GroceryListItem item={props.item[0]} />
+        <GroceryListItem item={props.item[1]} />
+    </ul>
   </div>
-);
- ReactDOM.render(<GroceryList />, document.getElementById('app'));
+  )
+  };
+
+var groceryItems = ['Cheese', 'Nuggets'];
+
+ ReactDOM.render(<GroceryList item={groceryItems} />, document.getElementById('app'));
 
 
 
