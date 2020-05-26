@@ -9,7 +9,7 @@
 
 var GroceryListItem = (props) => {
   return (
-    <li>{props.item}</li>
+    <li>{props.items}</li>
     );
   }
 
@@ -18,7 +18,7 @@ var GroceryList = (props) => {
   <div>
     <h3> My Grocery List</h3>
     <ul>
-      {props.item.map(item => <GroceryListItem item={item}/>
+      {props.items.map( value => <GroceryListItem items={value}/>
       )}
     </ul>
   </div>
@@ -27,7 +27,7 @@ var GroceryList = (props) => {
 
 var groceryItems = ['Cheese', 'Nuggets'];
 
- ReactDOM.render(<GroceryList item={groceryItems} />, document.getElementById('app'));
+ ReactDOM.render(<GroceryList items={groceryItems} />, document.getElementById('app'));
 
 
 
