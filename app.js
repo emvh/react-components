@@ -18,8 +18,8 @@ var GroceryList = (props) => {
   <div>
     <h3> My Grocery List</h3>
     <ul>
-        <GroceryListItem item={props.item[0]} />
-        <GroceryListItem item={props.item[1]} />
+      {props.item.map(item => <GroceryListItem item={item}/>
+      )}
     </ul>
   </div>
   )
