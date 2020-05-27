@@ -32,7 +32,7 @@ class GroceryListItem extends React.Component {
     };
 
     return (
-    <li style={style} onMouseEnter={this.onListItemHover.bind(this)} >{this.props.items}</li>
+    <li style={style} onMouseEnter={this.onListItemHover.bind(this)}> {this.props.items}</li>
     );
   }
 
@@ -44,8 +44,7 @@ class GroceryListItem extends React.Component {
 //     );
 //   }
 
-var GroceryList = (props) => {
-  return (
+var GroceryList = (props) => (
   <div>
     <h3>My Grocery List</h3>
     <ul>
@@ -54,12 +53,17 @@ var GroceryList = (props) => {
       )}
     </ul>
   </div>
-  )
-};
+);
 
 var groceryItems = ['Cheese', 'Nuggets'];
 
-ReactDOM.render(<GroceryList items={groceryItems} />, document.getElementById('app'));
+var App = () => (
+  <div>
+    <GroceryList items={groceryItems} />
+  </div>
+)
+
+ReactDOM.render(<App />, document.getElementById('app'));
 
 
 
